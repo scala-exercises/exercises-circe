@@ -52,13 +52,5 @@ lazy val publishSettings = Seq(
       Some("Snapshots" at nexus + "content/repositories/snapshots")
     else
       Some("Releases" at nexus + "service/local/staging/deploy/maven2")
-  },
-  pomExtra :=
-      <developers>
-        <developer>
-          <id>fperezp</id>
-          <name>Fran Perez</name>
-          <email>fran.p@47deg.com</email>
-        </developer>
-      </developers>
+  }
 )
