@@ -11,20 +11,20 @@ object JsonSection extends FlatSpec with Matchers with definitions.Section {
 
   import JsonHelpers._
 
-  /** Json is the circe data type to represent a Json object. It is a very useful data type to be familiar with since
-    * it's how circe is modeling the base type we want to deal with.
+  /** Json is the circe data type representing a Json object. It's very useful to be familiar with this data type since
+    * it's how circe models the base type we want to address.
     *
-    * Firstly, let's talk briefly about the shape of everyt Json object. It basically is semi structured data build on
+    * To begin, let's briefly talk about the shape of every Json object. It's basically semi-structured data built on
     * top of key-value pairs. These key-value pairs have a specific shape:
-    *   - keys are strings
-    *   - values can be of multiple types.
+    *   - keys are strings.
+    *   - values can be multiple types.
     *
-    * Then, to model a real json object we need to support different data types on the value field. For this purposes
+    * Next, to model a real json object, we need to support different data types in the value field. For this purpose,
     * we have different available methods so we can create a Json object from different source data types. Some examples
     * of these methods are `fromString`, `fromBoolean`, `fromDouble` and so on. For further details about all possible
     * methods, see https://travisbrown.github.io/circe/api/#io.circe.Json$
     *
-    * Let's see how these methods work.
+    * Let's take a look at how these methods work.
     *
     * {{{
     *   scala> // fromString example
@@ -54,7 +54,7 @@ object JsonSection extends FlatSpec with Matchers with definitions.Section {
     * }}}
     *
     *
-    * In addition, there are some other methods that allow you to convert from a Json object to a String.
+    * In addition, there are a few other methods that allow you to convert a Json object to a String.
     *
     * {{{
     *
@@ -107,11 +107,11 @@ object JsonSection extends FlatSpec with Matchers with definitions.Section {
 
   }
 
-  /** Furthemore, there are some other methods that allows you to deal with Json objects and apply transformation. We
-    * can use them to modify or apply any changes to a given Json object in a simpler way as if we have to deal with it
+  /** Furthemore, there are some other methods that allow you to deal with Json objects and apply transformation. We
+    * can use them to modify or apply any changes to a given Json object in a simpler way, as if we we're dealing with it
     * manually.
     *
-    * We are going to start from this Json array:
+    * We are going to start with this Json array:
     *
     * {{{
     *   val jsonArray: Json = Json.fromValues(List(
@@ -133,7 +133,7 @@ object JsonSection extends FlatSpec with Matchers with definitions.Section {
     *     }
     * }}}
     *
-    * So, having them, what's should be the result if we apply our transformJson function to our jsonArray value?
+    * So, with these in mind, what should be the result if we apply our transformJson function to our jsonArray value?
     *
     */
 
