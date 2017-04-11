@@ -22,6 +22,15 @@ class EncodingDecodingSpec extends Spec with Checkers {
     )
   }
 
+  def `automatic derivation Json` = {
+    check(
+      Test.testSuccess(
+        EncodingDecodingSection.automaticDerivation _,
+        (Right[String, String]("Chris"): Either[String, String]) :: HNil
+      )
+    )
+  }
+
   def `map Json` = {
     check(
       Test.testSuccess(

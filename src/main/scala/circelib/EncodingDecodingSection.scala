@@ -7,6 +7,8 @@ package circelib
 
 import org.scalatest._
 import io.circe.parser.decode
+import io.circe.syntax._
+import io.circe.generic.auto._
 
 /** @param name Encoding and decoding
  */
@@ -125,24 +127,24 @@ object EncodingDecodingSection
    *
    *  It is also possible to derive `Encoder` and `Decoder`s for many types with no boilerplate at all.
    *  Circe uses [[https://github.com/milessabin/shapeless shapeles]] to automatically derive the necessary type class instances:
-   *  {{{
-   *     import io.circe.generic.auto._
    *
-   *     case class Person(name: String)
+   *  import io.circe.generic.auto._
    *
-   *     case class Greeting(salutation: String, person: Person, exclamationMarks: Int)
+   *  Let´s see what happens when we create a Json with derived fields
    *
-   *     Greeting("Hey", Person("Chris"), 3).asJson
-   *     // res6: io.circe.Json =
-   *     // {
-   *     //    "salutation" : "Hey",
-   *     //    "person" : {
-   *     //      "name": "Chris"
-   *     //    },
-   *     // "exclamationMarks" : 3
-   *     // }
-   *  }}}
-   *
+   *  For this example we need to import `io.circe.generic.auto._`
+   */
+  def automaticDerivation(res0: Either[String, String]): Unit = {
+    case class Person(name: String)
+
+    case class Greeting(salutation: String, person: Person, exclamationMarks: Int)
+
+    val greetingJson = Greeting("Hey", Person("Chris"), 3).asJson
+
+    greetingJson.hcursor.downField("person").downField("name").as[String] should be(res0)
+  }
+
+  /**
    *  ==Custom encoders/decoders
    *
    *  If you want to write your own codec instead of using automatic or semi-automatic derivation, you can do so in a couple of ways.
