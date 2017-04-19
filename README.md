@@ -1,10 +1,9 @@
-#Scala Exercises - Circe library
-
+# Scala Exercises - Circe library
 ------------------------
 
 This repository hosts a content library for the [Scala Exercises](https://www.scala-exercises.org/) platform, including interactive exercises related to the [Circe](https://github.com/travisbrown/circe) JSON library.
 
-## About Scala exercises
+## About Scala exercises
 
 "Scala Exercises" brings exercises for the Stdlib, Cats, Shapeless and many other great libraries for Scala to your browser. Offering hundreds of solvable exercises organized into several categories covering the basics of the Scala language and it's most important libraries.
 
