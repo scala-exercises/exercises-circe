@@ -1,3 +1,8 @@
+/*
+ * scala-exercises - exercises-circe
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package circelib
 
 import io.circe.Json
@@ -25,10 +30,10 @@ class JsonSpec extends Spec with Checkers {
 
   def `Json Object helpers` = {
 
-    val res0: Json = Json.obj("key" -> Json.fromString("value"))
+    val res0: Json           = Json.obj("key" -> Json.fromString("value"))
     val res1: (String, Json) = ("name", Json.fromString("sample json"))
     val res2: (String, Json) = ("data", Json.obj("done" -> Json.fromBoolean(false)))
-    val res3: Json = Json.fromValues(List(Json.obj("x" -> Json.fromInt(1))))
+    val res3: Json           = Json.fromValues(List(Json.obj("x" -> Json.fromInt(1))))
 
     check(
       Test.testSuccess(
