@@ -27,11 +27,12 @@ object JsonSection extends FlatSpec with Matchers with definitions.Section {
    * Next, to model a real json object, we need to support different data types in the value field. For this purpose,
    * we have different available methods so we can create a Json object from different source data types. Some examples
    * of these methods are `fromString`, `fromBoolean`, `fromDouble` and so on. For further details about all possible
-   * methods, see https://travisbrown.github.io/circe/api/#io.circe.Json$
+   * methods, see http://circe.github.io/circe/api/io/circe/Json$.html
    *
    * Let's take a look at how these methods work.
    *
    * {{{
+   *   scala> import io.circe.Json
    *   scala> // fromString example
    *   scala> val jsonString: Json = Json.fromString("scala exercises")
    *   jsonString: io.circe.Json = "scala exercises"
