@@ -41,8 +41,8 @@ object JsonSection extends FlatSpec with Matchers with definitions.Section {
    *   scala> val jsonDouble: Option[Json] = Json.fromDouble(1)
    *   jsonDouble: Option[io.circe.Json] = Some(1.0)
    *
-   *   scala> val jsonDouble: Option[Json] = Json.fromDouble(1)
-   *   jsonString: Option[io.circe.Json] = Some(1.0)
+   *   scala> val jsonBoolean: Json = Json.fromBoolean(true)
+   *   jsonBoolean: io.circe.Json = true
    *
    *   scala> // fromFields example
    *   scala> val fieldList = List(
