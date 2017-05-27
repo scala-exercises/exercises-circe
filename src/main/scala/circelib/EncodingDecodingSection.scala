@@ -21,7 +21,7 @@ object EncodingDecodingSection
 
   /**
    * Circe uses `Encoder` and `Decoder` type classes for encoding and decoding. An `Encoder[A]` instance provides a function
-   * that will convert any `A` to a `Json` and a `Decoder[A]` takes a `Json` value to either an exception or an `A`.circe provides
+   * that will convert any `A` to a `Json` and a `Decoder[A]` takes a `Json` value to either an exception or an `A`. Circe provides
    * implicit instances of these type classes for many types from the Scala standard library, including `Int`, `String`, and others.
    * It also provides instances for `List[A]`, `Option[A]`, and other generic types, but only if `A` has an `Encoder` instance.
    *
@@ -39,7 +39,7 @@ object EncodingDecodingSection
    *   // ]
    * }}}
    *
-   * Use the `.as` syntax for decoding data from Json:
+   * Use the `.as` syntax for decoding data from `Json`:
    *
    * {{{
    *   intsJson.as[List[Int]]
@@ -52,7 +52,7 @@ object EncodingDecodingSection
    *   import io.circe.parser.decode
    * }}}
    *
-   *  Try your answer for this exercercises
+   *  Let's decode a JSON String:
    */
   def decodeJson(res0: Boolean, res1: Either[String, List[Int]]): Unit = {
     val decodeList = decode[List[Int]]("[1, 2, 3]")
@@ -65,7 +65,7 @@ object EncodingDecodingSection
   /**
    * ==Semi-automatic derivation
    *
-   * Sometimes it´ convenient to have an `Encoder` or `Decoder` defined in your code, and '''semi-automatic''' derivation can help. You´d write:
+   * Sometimes it's convenient to have an `Encoder` or `Decoder` defined in your code, and '''semi-automatic''' derivation can help. You´d write:
    *
    * {{{
    *   import io.circe._, io.circe.generic.semiauto._
@@ -104,7 +104,7 @@ object EncodingDecodingSection
    *
    *  ==forProductN helper methods==
    *
-   * It´s also possible to construct encoders and decoders for case class-like types in a relatively boilerplate-free way without generic derivation:
+   * It's also possible to construct encoders and decoders for case class-like types in a relatively boilerplate-free way without generic derivation:
    * {{{
    *   case class User(id: Long, firstName: String, lastName: String)
    *
@@ -125,12 +125,10 @@ object EncodingDecodingSection
    *
    * ==Fully automatic derivation==
    *
-   *  It is also possible to derive `Encoder` and `Decoder`s for many types with no boilerplate at all.
-   *  Circe uses [[https://github.com/milessabin/shapeless shapeles]] to automatically derive the necessary type class instances:
+   *  It is also possible to derive an `Encoder` and `Decoder` for many types with no boilerplate at all.
+   *  Circe uses [[https://github.com/milessabin/shapeless shapeless]] to automatically derive the necessary type class instances:
    *
-   *  import io.circe.generic.auto._
-   *
-   *  Let´s see what happens when we create a Json with derived fields
+   *  Let´s see what happens when we create a `Json` with derived fields
    *
    *  For this example we need to import `io.circe.generic.auto._`
    */
@@ -205,7 +203,7 @@ object EncodingDecodingSection
    *   json.as[Map[Foo, Int]]
    * }}}
    *
-   * Let´s try your answer for this example:
+   * What would be returned as a result of decoding and traversing the returned `Map`:
    */
   def mapJson(res0: Either[String, Int]): Unit =
     json.hcursor.downField("hello").as[Int] should be(res0)
