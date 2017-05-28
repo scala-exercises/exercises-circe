@@ -72,7 +72,7 @@ object TraversingSection
   /**
    * You can also move to a side of an Array field.
    *
-   * Try your answer for this last example
+   * What would the result be when traversing through the array?
    */
   def moveFocus3(res0: Either[String, String]): Unit = {
     val secondQux: Decoder.Result[String] =
@@ -84,9 +84,9 @@ object TraversingSection
   /**
    * ==Transforming data==
    *
-   * In this section we are gona learn how to use a cursor to modify JSON
+   * In this section we are going to learn how to use a cursor to modify JSON
    *
-   * Circle has three slightly different cursor implementations:
+   * Circe has three slightly different cursor implementations:
    *
    * `Cursor` provides functionality for moving around a tree and making modifications.
    *
@@ -94,7 +94,7 @@ object TraversingSection
    *
    * `ACursor` also tracks history, but represents the possibility of failure (e.g. calling `downField` on a field that doesn’t exist.
    *
-   * Pay attention because we are gonna use a `.mapString` this time.
+   * Pay attention because we are going to use a `.mapString` this time.
    *
    * {{{
    *   val reversedNameCursor: ACursor =

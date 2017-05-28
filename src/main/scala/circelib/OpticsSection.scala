@@ -81,7 +81,7 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
    *
    * }}}
    *
-   * Now is your turn, let´ try your answer:
+   * Now is your turn, let´s try your answer:
    */
   def checkTraversingOptics(res0: Option[String]): Unit = {
     val address: Option[String] = _address.getOption(json)
@@ -144,7 +144,7 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
    * `JsonPath` relies on a feature of Scala called `Dynamic`. Using `Dynamic` you can call methods that don´t actually exist.
    * When you do so, the `selectDynamic` method is called, and the name of the method you wanted to call is passed as an argument.
    *
-   * The use of Dynamic means that your code is not "typo-safe". So be careful when you typing
+   * The use of `Dynamic` means that your code is not "typo-safe". So be careful when you are typing
    *
    * {{{
    *   val doubleQuantities: Json => Json =
@@ -153,7 +153,7 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
    *   val modifiedJson = doubleQuantities(json)
    * }}}
    *
-   * Let´s see the result for the last afirmation
+   * Let´s see the result for the last affirmation
    */
   def modifyingJsonDynamic(res0: Boolean): Unit = {
     val modifiedQuantitiesDynamic: List[Int] =
