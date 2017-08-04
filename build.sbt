@@ -1,7 +1,7 @@
-val scalaExerciesV = "0.4.0-SNAPSHOT"
+val scalaExercisesV = "0.4.0-SNAPSHOT"
 val circeVersion = "0.7.0"
 
-def dep(artifactId: String) = "org.scala-exercises" %% artifactId % scalaExerciesV
+def dep(artifactId: String) = "org.scala-exercises" %% artifactId % scalaExercisesV
 
 lazy val `circe` = (project in file("."))
   .enablePlugins(ExerciseCompilerPlugin)
