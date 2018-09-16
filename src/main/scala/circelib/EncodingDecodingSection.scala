@@ -100,7 +100,7 @@ object EncodingDecodingSection
    *  }}}
    *
    *  This works both case classes and sealed trait hierarchies.
-   *  NOTE: You will need the [[http://docs.scala-lang.org/overviews/macros/paradise Macro Paradise]] plugin to use annotation macros like `@JsonCodec`
+   *  NOTE: You will need the [[http://docs.scala-lang.org/overviews/macros/paradise.html Macro Paradise]] plugin to use annotation macros like `@JsonCodec`
    *
    *  ==forProductN helper methods==
    *
