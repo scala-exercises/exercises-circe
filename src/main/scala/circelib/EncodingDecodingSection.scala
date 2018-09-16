@@ -195,6 +195,8 @@ object EncodingDecodingSection
    *     Foo("hello") -> 123,
    *     Foo("world") -> 456
    *   }
+   *   
+   *   val json = map.asJson
    *
    *   implicit val fooKeyDecoder = new KeyDecoder[Foo] {
    *     override def apply(key: String): Option[Foo] = Some(Foo(key))
