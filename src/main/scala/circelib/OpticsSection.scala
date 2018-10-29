@@ -73,7 +73,6 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
    *
    * {{{
    *   import io.circe.optics.JsonPath._
-   *   // import io.circe.optics.JsonPath._
    *
    *   val _address = root.order.customer.contactDetails.address.string
    *
