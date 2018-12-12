@@ -194,13 +194,13 @@ object EncodingDecodingSection
    *   val map = Map[Foo, Int](
    *     Foo("hello") -> 123,
    *     Foo("world") -> 456
-   *   }
+   *   )
    *
    *   implicit val fooKeyDecoder = new KeyDecoder[Foo] {
    *     override def apply(key: String): Option[Foo] = Some(Foo(key))
    *   }
    *
-   *   json.as[Map[Foo, Int]]
+   *   val json = map.asJson
    * }}}
    *
    * What would be returned as a result of decoding and traversing the returned `Map`:
