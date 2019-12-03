@@ -12,9 +12,7 @@ import org.scalaexercises.definitions.Section
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
- * @param name Custom codecs
- *
- * ==Custom encoders/decoders==
+ * =Custom encoders/decoders=
  *
  * If you want to write your own codec instead of using automatic or semi-automatic derivation, you can do so in a couple of ways.
  *
@@ -45,11 +43,13 @@ import org.scalatest.{FlatSpec, Matchers}
  *    Either.catchNonFatal(Instant.parse(str)).leftMap(t => "Instant")
  * }
  * }}}
+ *
+ * @param name Custom codecs
  */
 object CustomCodecsSection extends FlatSpec with Matchers with Section {
 
   /**
-   * ==Custom key types==
+   * =Custom key types=
    *
    * If you need to encode/decode `Map[K, V]` where `K` is not `String` (or `Symbol`, `Int`, `Long`, etc), you need to provide a `KeyEncoder`
    * and/or `KeyDecoder` for your custom key type.
@@ -81,11 +81,11 @@ object CustomCodecsSection extends FlatSpec with Matchers with Section {
    *
    * What would be returned as a result of decoding and traversing the returned `Map`:
    */
-  def mapJson(res0: Either[String, Int]): Unit =
+  def mapJson(res0: Either[String, Int]) =
     json.hcursor.downField("hello").as[Int] should be(res0)
 
   /**
-   * ==Custom key mappings via annotations==
+   * =Custom key mappings via annotations=
    *
    * It’s often necessary to work with keys in your JSON objects that aren’t idiomatic case class member names in
    * Scala. While the standard generic derivation doesn’t support this use case, the experimental circe-generic-extras

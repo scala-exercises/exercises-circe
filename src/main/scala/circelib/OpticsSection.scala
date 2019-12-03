@@ -28,7 +28,7 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
    *
    * Note that this will require your project to depend on both Scalaz and cats.
    *
-   * ==Traversing JSON==
+   * =Traversing JSON=
    *
    * Let´s try a few examples using this JSON document:
    *
@@ -36,26 +36,26 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
    *   val json: Json = parse("""
    *   {
    *     "order": {
-   *      "customer": {
-   *        "name": "Custy McCustomer",
-   *        "contactDetails": {
+   *       "customer": {
+   *         "name": "Custy McCustomer",
+   *         "contactDetails": {
    *           "address": "1 Fake Street, London, England",
    *           "phone": "0123-456-789"
-   *       }
-   *     },
-   *     "items": [{
-   *       "id": 123,
+   *         }
+   *       },
+   *       "items": [{
+   *         "id": 123,
    *         "description": "banana",
-   *        "quantity": 1
-   *     }, {
-   *        "id": 456,
+   *         "quantity": 1
+   *       }, {
+   *         "id": 456,
    *         "description": "apple",
-   *        "quantity": 2
-   *     }],
-   *     "total": 123.45
+   *         "quantity": 2
+   *       }],
+   *       "total": 123.45
    *     }
-   *     }
-   *     """).getOrElse(Json.Null)
+   *   }
+   * """).getOrElse(Json.Null)
    * }}}
    *
    * If we wanted to get the customer’s phone number, we could do it using a cursor as follows:
@@ -84,7 +84,7 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
    *
    * Now is your turn, let´s try your answer:
    */
-  def checkTraversingOptics(res0: Option[String]): Unit = {
+  def checkTraversingOptics(res0: Option[String]) = {
     val address: Option[String] = _address.getOption(json)
     address should be(res0)
   }
@@ -115,20 +115,20 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
    *
    * And with optics:
    */
-  def checkTraversingOptics2(res0: List[String]): Unit = {
+  def checkTraversingOptics2(res0: List[String]) = {
     val items: List[String] = root.order.items.each.description.string.getAll(json)
 
     items should be(res0)
   }
 
   /**
-   * ==Modifying JSON==
+   * =Modifying JSON=
    *
    * Optics can also be used for making modifications to JSON.
    *
    * In this example we will try modifiying the quantities. Let´s try your answer, `modifiedQuantities` would be...
    */
-  def modifyingJsonOptics(res0: List[Int]): Unit = {
+  def modifyingJsonOptics(res0: List[Int]) = {
     val doubleQuantities: Json => Json = root.order.items.each.quantity.int.modify(_ * 2)
 
     val modifiedJson = doubleQuantities(json)
@@ -138,7 +138,7 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
   }
 
   /**
-   * ==Recursively modifying JSON==
+   * =Recursively modifying JSON=
    *
    * Sometimes you may need to recursively modify JSON. Let assume you need to transform all numbers into strings in
    * the example JSON:
@@ -148,7 +148,7 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
     import monocle.function.Plated
 
     val recursiveModifiedJson = Plated.transform[Json] { j =>
-      json.asNumber match {
+      j.asNumber match {
         case Some(n) => Json.fromString(n.toString)
         case None    => j
       }
@@ -159,7 +159,7 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
 
   /**
    *
-   * ==Dynamic==
+   * =Dynamic=
    *
    * `JsonPath` relies on a feature of Scala called `Dynamic`. Using `Dynamic` you can call methods that don´t actually exist.
    * When you do so, the `selectDynamic` method is called, and the name of the method you wanted to call is passed as an argument.
@@ -175,7 +175,7 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
    *
    * Let´s see the result for the last affirmation
    */
-  def modifyingJsonDynamic(res0: Boolean): Unit = {
+  def modifyingJsonDynamic(res0: Boolean) = {
     val modifiedQuantitiesDynamic: List[Int] =
       root.order.items.each.quantity.int.getAll(modifiedJson)
 

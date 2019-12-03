@@ -19,7 +19,13 @@ object CirceLibrary extends definitions.Library {
   override def color = Some("#996666")
 
   override def sections =
-    List(JsonSection, TraversingSection, OpticsSection, EncodingDecodingSection)
+    List(
+      JsonSection,
+      TraversingSection,
+      EncodingDecodingSection,
+      CustomCodecsSection,
+      ADTSection,
+      OpticsSection)
 
   override def logoPath = "circe"
 }

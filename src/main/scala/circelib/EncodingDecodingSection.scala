@@ -53,7 +53,7 @@ object EncodingDecodingSection
    *
    *  Let's decode a JSON String:
    */
-  def decodeJson(res0: Boolean, res1: Either[String, List[Int]]): Unit = {
+  def decodeJson(res0: Boolean, res1: Either[String, List[Int]]) = {
     val decodeList = decode[List[Int]]("[1, 2, 3]")
 
     decodeList.isRight should be(res0)
@@ -62,7 +62,7 @@ object EncodingDecodingSection
   }
 
   /**
-   * ==Semi-automatic derivation==
+   * =Semi-automatic derivation=
    *
    * Sometimes it's convenient to have an `Encoder` or `Decoder` defined in your code, and '''semi-automatic''' derivation can help. You´d write:
    *
@@ -81,7 +81,7 @@ object EncodingDecodingSection
    *   implicit val fooEncoder: Encoder[Foo] = deriveEncoder
    * }}}
    *
-   * ==@JsonCodec==
+   * =@JsonCodec=
    *
    *  The circe-generic projects includes a `@JsonCodec` annotation that simplifies the use of semi-automatic generic derivation:
    *
@@ -101,7 +101,7 @@ object EncodingDecodingSection
    *  This works both case classes and sealed trait hierarchies.
    *  NOTE: You will need the [[http://docs.scala-lang.org/overviews/macros/paradise.html Macro Paradise]] plugin to use annotation macros like `@JsonCodec`
    *
-   *  ==forProductN helper methods==
+   *  =forProductN helper methods=
    *
    * It's also possible to construct encoders and decoders for case class-like types in a relatively boilerplate-free way without generic derivation:
    * {{{
@@ -118,11 +118,11 @@ object EncodingDecodingSection
    *    }
    * }}}
    *
-   *  It’s not as clean or as maintainable as generic derivation, but it’s less magical, it requires nothing but circe-core, and if you need a custom name
-   *  mapping it’s currently the best solution (although 0.6.0 introduces experimental configurable generic derivation in the circe-generic-extras module).
+   *  It’s not as clean or as maintainable as generic derivation, but it’s less magical, it requires nothing but `circe-core`, and if you need a custom name
+   *  mapping it’s currently the best solution (although `0.6.0` introduces experimental configurable generic derivation in the `circe-generic-extras` module).
    *
    *
-   * ==Automatic derivation==
+   * =Automatic derivation=
    *
    *  It is also possible to derive an `Encoder` and `Decoder` for many types with no boilerplate at all.
    *  Circe uses [[https://github.com/milessabin/shapeless shapeless]] to automatically derive the necessary type class instances:
@@ -131,7 +131,7 @@ object EncodingDecodingSection
    *
    *  For this example we need to import `io.circe.generic.auto._`
    */
-  def automaticDerivation(res0: Either[String, String]): Unit = {
+  def automaticDerivation(res0: Either[String, String]) = {
     case class Person(name: String)
 
     case class Greeting(salutation: String, person: Person, exclamationMarks: Int)

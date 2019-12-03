@@ -7,8 +7,7 @@
 package circelib.helpers
 
 import cats.syntax.functor._
-import io.circe.{Decoder, Encoder}
-import io.circe.generic.auto._
+import io.circe.{Decoder, Encoder}, io.circe.generic.auto._
 import io.circe.syntax._
 
 object ADTHelpers {
@@ -37,10 +36,6 @@ object ADTHelpers {
       ).reduceLeft(_ or _)
   }
 
-  // TODO: Having problems with this exercise (https://github.com/circe/circe/issues/1125)
-  /*// To suppress previously imported implicit codecs.
-  import GenericDerivation.{decodeEvent => _, encodeEvent => _}
-
   object ShapesDerivation {
     import shapeless.{Coproduct, Generic}
 
@@ -54,7 +49,7 @@ object ADTHelpers {
         gen: Generic.Aux[A, Repr],
         decodeRepr: Decoder[Repr]): Decoder[A] = decodeRepr.map(gen.from)
 
-  }*/
+  }
 
   object GenericExtraDerivation {
     import io.circe.generic.extras.Configuration

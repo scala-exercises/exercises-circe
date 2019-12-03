@@ -24,26 +24,25 @@ object TraversingSection
    *
    * Suppose we have the following JSON document:
    *
-   *
    * {{{
-   *     import cats.syntax.either._
-   *     import io.circe._, io.circe.parser._
+   * import cats.syntax.either._
+   * import io.circe._, io.circe.parser._
    *
-   *     val json: String = """
-   *     {
-   *       "id": "c730433b-082c-4984-9d66-855c243266f0",
-   *       "name": "Foo",
-   *       "counts": [1, 2, 3],
-   *       "values": {
-   *       "bar": true,
-   *       "baz": 100.001,
-   *       "qux": ["a", "b"]
-   *       }
-   *     } """
+   * val json: String = """
+   * {
+   *   "id": "c730433b-082c-4984-9d66-855c243266f0",
+   *   "name": "Foo",
+   *   "counts": [1, 2, 3],
+   *   "values": {
+   *   "bar": true,
+   *   "baz": 100.001,
+   *   "qux": ["a", "b"]
+   *   }
+   * } """
    *
-   *    val doc: Json = parse(json).getOrElse(Json.Null)
+   * val doc: Json = parse(json).getOrElse(Json.Null)
    * }}}
-   * ==Extracting data==
+   * =Extracting data=
    *
    * In order to traverse we need to create an `HCursor` with the focus at the document’s root
    *
@@ -53,7 +52,7 @@ object TraversingSection
    *
    * We can then use various operations to move the focus of the cursor around the document and extract data from it
    */
-  def moveFocus(res0: Either[String, Double]): Unit = {
+  def moveFocus(res0: Either[String, Double]) = {
     val baz: Decoder.Result[Double] = cursor.downField("values").downField("baz").as[Double]
 
     baz should be(res0)
@@ -64,7 +63,7 @@ object TraversingSection
    *
    * What would be the result in this case?
    */
-  def moveFocus2(res0: Either[String, Double]): Unit = {
+  def moveFocus2(res0: Either[String, Double]) = {
     val baz2: Decoder.Result[Double] = cursor.downField("values").get[Double]("baz")
 
     baz2 should be(res0)
@@ -75,7 +74,7 @@ object TraversingSection
    *
    * What would the result be when traversing through the array?
    */
-  def moveFocus3(res0: Either[String, String]): Unit = {
+  def moveFocus3(res0: Either[String, String]) = {
     val secondQux: Decoder.Result[String] =
       cursor.downField("values").downField("qux").downArray.right.as[String]
 
@@ -83,7 +82,7 @@ object TraversingSection
   }
 
   /**
-   * ==Transforming data==
+   * =Transforming data=
    *
    * In this section we are going to learn how to use a cursor to modify JSON
    *
@@ -110,7 +109,7 @@ object TraversingSection
    *
    * The result contains the original document, but what would be the result for "name" field?
    */
-  def modifyJson(res0: Either[String, String]): Unit = {
+  def modifyJson(res0: Either[String, String]) = {
 
     val nameResult: Result[String] =
       cursor.downField("name").withFocus(_.mapString(_.reverse)).as[String]
