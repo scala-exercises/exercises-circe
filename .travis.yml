@@ -4,7 +4,7 @@ scala:
 - 2.12.10
 
 jdk:
-- oraclejdk8
+- openjdk8
 
 before_install:
 - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
