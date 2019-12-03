@@ -1,14 +1,15 @@
 /*
- * scala-exercises - exercises-circe
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-circe
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package circelib.helpers
 
-import io.circe._
+import io.circe.KeyEncoder
 import io.circe.syntax._
 
-object EncodingHelpers {
+object CustomCodecsHelpers {
 
   case class Foo(value: String)
   // defined class Foo

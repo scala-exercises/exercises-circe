@@ -1,6 +1,7 @@
 /*
- * scala-exercises - exercises-circe
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-circe
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package circelib
@@ -18,7 +19,13 @@ object CirceLibrary extends definitions.Library {
   override def color = Some("#996666")
 
   override def sections =
-    List(JsonSection, TraversingSection, OpticsSection, EncodingDecodingSection)
+    List(
+      JsonSection,
+      TraversingSection,
+      EncodingDecodingSection,
+      CustomCodecsSection,
+      ADTSection,
+      OpticsSection)
 
   override def logoPath = "circe"
 }

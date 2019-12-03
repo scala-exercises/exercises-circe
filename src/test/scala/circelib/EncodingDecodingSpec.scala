@@ -1,17 +1,18 @@
 /*
- * scala-exercises - exercises-circe
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-circe
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package circelib
 
 import org.scalaexercises.Test
-import org.scalacheck.Shapeless._
-import org.scalatest.Spec
-import org.scalatest.prop.Checkers
+import org.scalacheck.ScalacheckShapeless._
+import org.scalatest.refspec.RefSpec
+import org.scalatestplus.scalacheck.Checkers
 import shapeless.HNil
 
-class EncodingDecodingSpec extends Spec with Checkers {
+class EncodingDecodingSpec extends RefSpec with Checkers {
 
   def `decode Json` = {
     check(
@@ -27,15 +28,6 @@ class EncodingDecodingSpec extends Spec with Checkers {
       Test.testSuccess(
         EncodingDecodingSection.automaticDerivation _,
         (Right[String, String]("Chris"): Either[String, String]) :: HNil
-      )
-    )
-  }
-
-  def `map Json` = {
-    check(
-      Test.testSuccess(
-        EncodingDecodingSection.mapJson _,
-        (Right[String, Int](123): Either[String, Int]) :: HNil
       )
     )
   }
