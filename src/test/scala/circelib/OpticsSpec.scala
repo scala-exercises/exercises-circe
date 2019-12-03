@@ -1,17 +1,18 @@
 /*
- * scala-exercises - exercises-circe
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-circe
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package circelib
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
-import org.scalatest.prop.Checkers
+import org.scalatest.refspec.RefSpec
+import org.scalatestplus.scalacheck.Checkers
 import shapeless.HNil
 
-class OpticsSpec extends Spec with Checkers {
+class OpticsSpec extends RefSpec with Checkers {
 
   def `check traversing optics` = {
     check(
@@ -36,6 +37,15 @@ class OpticsSpec extends Spec with Checkers {
       Test.testSuccess(
         OpticsSection.modifyingJsonOptics _,
         List(2, 4) :: HNil
+      )
+    )
+  }
+
+  def `recursively modify optics` = {
+    check(
+      Test.testSuccess(
+        OpticsSection.recursiveModifyJsonOptics _,
+        Option("123.45") :: HNil
       )
     )
   }

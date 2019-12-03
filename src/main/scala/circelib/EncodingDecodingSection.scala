@@ -1,6 +1,7 @@
 /*
- * scala-exercises - exercises-circe
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-circe
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package circelib
@@ -16,8 +17,6 @@ object EncodingDecodingSection
     extends FlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
-
-  import circelib.helpers.EncodingHelpers._
 
   /**
    * Circe uses `Encoder` and `Decoder` type classes for encoding and decoding. An `Encoder[A]` instance provides a function
@@ -63,7 +62,7 @@ object EncodingDecodingSection
   }
 
   /**
-   * ==Semi-automatic derivation
+   * ==Semi-automatic derivation==
    *
    * Sometimes it's convenient to have an `Encoder` or `Decoder` defined in your code, and '''semi-automatic''' derivation can help. You´d write:
    *
@@ -123,7 +122,7 @@ object EncodingDecodingSection
    *  mapping it’s currently the best solution (although 0.6.0 introduces experimental configurable generic derivation in the circe-generic-extras module).
    *
    *
-   * ==Fully automatic derivation==
+   * ==Automatic derivation==
    *
    *  It is also possible to derive an `Encoder` and `Decoder` for many types with no boilerplate at all.
    *  Circe uses [[https://github.com/milessabin/shapeless shapeless]] to automatically derive the necessary type class instances:
@@ -141,71 +140,5 @@ object EncodingDecodingSection
 
     greetingJson.hcursor.downField("person").downField("name").as[String] should be(res0)
   }
-
-  /**
-   *  ==Custom encoders/decoders
-   *
-   *  If you want to write your own codec instead of using automatic or semi-automatic derivation, you can do so in a couple of ways.
-   *
-   *  Firstly, you can write a new `Encoder[A]` and `Decoder[A]` from scratch
-   *
-   *  {{{
-   *    class Thing()
-   *
-   *    implicit val encodeFoo: Encoder[Thing] = new Encoder[Thing] {
-   *       final def apply(a: Thing): Json = ??? // your implementation goes here
-   *    }
-   *
-   *    implicit val decodeFoo: Decoder[Thing] = new Decoder[Thing] {
-   *       final def apply(c: HCursor): Decoder.Result[Thing] = Left(DecodingFailure("Not implemented yet", c.history))
-   *    }
-   *  }}}
-   *
-   *  But in many cases you might find it more convenient to piggyback on top of the decoders that are already available. For example, a codec for
-   *  `java.time.Instant` might look like this:
-   *  {{{
-   *    import cats.syntax.either._
-   *
-   *    import java.time.Instant
-   *
-   *    implicit val encodeInstant: Encoder[Instant] = Encoder.encodeString.contramap[Instant](_.toString)
-   *
-   *    implicit val decodeInstant: Decoder[Instant] = Decoder.decodeString.emap { str =>
-   *       Either.catchNonFatal(Instant.parse(str)).leftMap(t => "Instant")
-   *     }
-   *  }}}
-   *
-   * ==Custom key types==
-   *
-   * If you need to encode/decode `Map[K, V]` where `K` is not `String` (or `Symbol`, `Int`, `Long`, etc), you need to provide a `KeyEncoder`
-   * and/or `KeyDecoder` for your custom key type.
-   *
-   * For example:
-   * {{{
-   *   import io.circe.syntax._
-   *
-   *   case class Foo(value: String)
-   *
-   *
-   *   implicit val fooKeyEncoder = new KeyEncoder[Foo] {
-   *     override def apply(foo: Foo): String = foo.value
-   *   }
-   *
-   *   val map = Map[Foo, Int](
-   *     Foo("hello") -> 123,
-   *     Foo("world") -> 456
-   *   }
-   *
-   *   implicit val fooKeyDecoder = new KeyDecoder[Foo] {
-   *     override def apply(key: String): Option[Foo] = Some(Foo(key))
-   *   }
-   *
-   *   json.as[Map[Foo, Int]]
-   * }}}
-   *
-   * What would be returned as a result of decoding and traversing the returned `Map`:
-   */
-  def mapJson(res0: Either[String, Int]): Unit =
-    json.hcursor.downField("hello").as[Int] should be(res0)
 
 }

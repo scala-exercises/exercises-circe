@@ -1,6 +1,7 @@
 /*
- * scala-exercises - exercises-circe
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-circe
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package circelib
@@ -121,7 +122,6 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
   }
 
   /**
-   *
    * ==Modifying JSON==
    *
    * Optics can also be used for making modifications to JSON.
@@ -138,13 +138,33 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
   }
 
   /**
+   * ==Recursively modifying JSON==
+   *
+   * Sometimes you may need to recursively modify JSON. Let assume you need to transform all numbers into strings in
+   * the example JSON:
+   */
+  def recursiveModifyJsonOptics(res0: Option[String]) = {
+    import io.circe.optics.JsonOptics._
+    import monocle.function.Plated
+
+    val recursiveModifiedJson = Plated.transform[Json] { j =>
+      json.asNumber match {
+        case Some(n) => Json.fromString(n.toString)
+        case None    => j
+      }
+    }(json)
+
+    root.order.total.string.getOption(recursiveModifiedJson) shouldBe res0
+  }
+
+  /**
    *
    * ==Dynamic==
    *
    * `JsonPath` relies on a feature of Scala called `Dynamic`. Using `Dynamic` you can call methods that don´t actually exist.
    * When you do so, the `selectDynamic` method is called, and the name of the method you wanted to call is passed as an argument.
    *
-   * The use of `Dynamic` means that your code is not "typo-safe". So be careful when you are typing
+   * '''WARNING:''' The use of `Dynamic` means that your code is not "typo-safe". So be careful when you are typing
    *
    * {{{
    *   val doubleQuantities: Json => Json =
@@ -161,4 +181,5 @@ object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.defi
 
     modifiedQuantitiesDynamic == List(2, 4) should be(res0)
   }
+
 }

@@ -1,11 +1,11 @@
 /*
- * scala-exercises - exercises-circe
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-circe
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package circelib.helpers
 
-import cats.syntax.either._
 import io.circe.{ACursor, HCursor, Json}
 import io.circe.parser.parse
 
