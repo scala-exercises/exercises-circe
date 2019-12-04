@@ -8,12 +8,13 @@ package circelib
 
 import io.circe.Json
 import org.scalaexercises.definitions
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 import circelib.helpers.JsonHelpers
 
 /** @param name Json
  */
-object JsonSection extends FlatSpec with Matchers with definitions.Section {
+object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
 
   import JsonHelpers._
 

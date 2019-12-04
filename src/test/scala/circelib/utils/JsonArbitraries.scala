@@ -6,9 +6,9 @@
 
 package circelib.utils
 
+import io.circe.Json
 import io.circe.syntax._
-import io.circe.{Encoder, Json}
-import org.scalacheck.{Arbitrary, Gen}
+import org.scalacheck.Arbitrary
 import org.scalacheck.Gen._
 
 object JsonArbitraries {

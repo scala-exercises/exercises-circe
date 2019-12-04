@@ -21,7 +21,8 @@ lazy val `circe` = (project in file("."))
       %%("cats-core", V.cats),
       %%("scalatest", V.scalatest),
       %%("scalacheck", V.scalacheck),
-      "com.github.alexarchambault" %% "scalacheck-shapeless_1.14" % V.scalacheckShapeless
+      "com.github.alexarchambault" %% "scalacheck-shapeless_1.14" % V.scalacheckShapeless,
+      "org.scalatestplus"          %% "scalatestplus-scalacheck"  % V.scalatestplusScheck
     ),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
   )

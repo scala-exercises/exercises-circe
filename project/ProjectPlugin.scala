@@ -1,4 +1,3 @@
-import scala.language.reflectiveCalls
 import de.heikoseeberger.sbtheader.HeaderPlugin.autoImport._
 import de.heikoseeberger.sbtheader.License._
 import sbt.Keys._
@@ -6,6 +5,8 @@ import sbt._
 import sbtorgpolicies.OrgPoliciesPlugin.autoImport._
 import sbtorgpolicies._
 import sbtorgpolicies.model._
+
+import scala.language.reflectiveCalls
 
 object ProjectPlugin extends AutoPlugin {
 
@@ -22,7 +23,8 @@ object ProjectPlugin extends AutoPlugin {
       val circeOptics: String         = "0.12.0"
       val circeGenericExtras: String  = "0.12.2"
       val shapeless: String           = "2.3.3"
-      val scalatest: String           = "3.0.8"
+      val scalatest: String           = "3.1.0"
+      val scalatestplusScheck: String = "3.1.0.0-RC2"
       val scalacheck: String          = "1.14.2"
       val scalacheckShapeless: String = "1.2.3"
     }

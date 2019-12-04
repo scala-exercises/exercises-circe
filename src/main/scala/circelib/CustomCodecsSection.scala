@@ -9,7 +9,8 @@ package circelib
 import io.circe.generic.extras._, io.circe.syntax._
 import circelib.helpers.CustomCodecsHelpers.json
 import org.scalaexercises.definitions.Section
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /**
  * =Custom encoders/decoders=
@@ -46,7 +47,7 @@ import org.scalatest.{FlatSpec, Matchers}
  *
  * @param name Custom codecs
  */
-object CustomCodecsSection extends FlatSpec with Matchers with Section {
+object CustomCodecsSection extends AnyFlatSpec with Matchers with Section {
 
   /**
    * =Custom key types=

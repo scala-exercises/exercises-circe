@@ -6,7 +6,8 @@
 
 package circelib
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 import io.circe.parser.decode
 import io.circe.syntax._
 import io.circe.generic.auto._
@@ -14,7 +15,7 @@ import io.circe.generic.auto._
 /** @param name Encoding and decoding
  */
 object EncodingDecodingSection
-    extends FlatSpec
+    extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 
