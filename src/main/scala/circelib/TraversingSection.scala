@@ -7,13 +7,14 @@
 package circelib
 
 import io.circe.Decoder.Result
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 import io.circe._
 
 /** @param name Traversing and modifying
  */
 object TraversingSection
-    extends FlatSpec
+    extends AnyFlatSpec
     with Matchers
     with org.scalaexercises.definitions.Section {
 

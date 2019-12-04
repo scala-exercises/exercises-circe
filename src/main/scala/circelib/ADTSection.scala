@@ -8,7 +8,8 @@ package circelib
 
 import io.circe.syntax._
 import org.scalaexercises.definitions.Section
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 /**
  * =ADTs encoding and decoding=
@@ -18,7 +19,7 @@ import org.scalatest.{FlatSpec, Matchers}
  *
  * @param name ADT (Algebraic Data Types)
  */
-object ADTSection extends FlatSpec with Matchers with Section {
+object ADTSection extends AnyFlatSpec with Matchers with Section {
 
   import helpers.ADTHelpers._
 

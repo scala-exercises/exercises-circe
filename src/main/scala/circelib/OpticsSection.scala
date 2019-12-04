@@ -7,12 +7,13 @@
 package circelib
 
 import io.circe._
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 import io.circe.optics.JsonPath._
 
 /** @param name Optics
  */
-object OpticsSection extends FlatSpec with Matchers with org.scalaexercises.definitions.Section {
+object OpticsSection extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
   import circelib.helpers.OpticsHelpers._
 
