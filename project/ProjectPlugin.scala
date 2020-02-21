@@ -23,7 +23,7 @@ object ProjectPlugin extends AutoPlugin {
       val circeOptics: String         = "0.12.0"
       val circeGenericExtras: String  = "0.12.2"
       val shapeless: String           = "2.3.3"
-      val scalatest: String           = "3.1.0"
+      val scalatest: String           = "3.1.1"
       val scalatestplusScheck: String = "3.1.0.0-RC2"
       val scalacheck: String          = "1.14.3"
       val scalacheckShapeless: String = "1.2.4"
