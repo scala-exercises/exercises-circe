@@ -48,15 +48,22 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
    *
    *   scala> // fromFields example
    *   scala> val fieldList = List(
-   *           ("key1", Json.fromString("value1")),
-   *           ("key2", Json.fromInt(1)))
-   *   fieldList: List[(String, io.circe.Json)] = List((key1,"value1"), (key2,1))
+   *       ("name", Json.fromString("sample json")),
+   *       ("version", Json.fromInt(1)),
+   *       ("data", Json.fromFields(
+   *         List(
+   *           ("done", Json.fromBoolean(false)))))
+   *     )
+   *   fieldList: List[(String, io.circe.Json)] = List((name,"sample json"), (version,1), (data,{ "done" : false }))
    *
    *   scala> val jsonFromFields: Json = Json.fromFields(fieldList)
-   *   jsonFromFields: io.circe.Json =
+   *   res1: io.circe.Json =
    *   {
-   *     "key1" : "value1",
-   *     "key2" : 1
+   *     "name" : "sample json",
+   *     "version" : 1,
+   *     "data" : {
+   *       "done" : false
+   *     }
    *   }
    *
    * }}}
@@ -67,7 +74,7 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
    * {{{
    *
    *   scala> jsonFromFields.noSpaces
-   *   res0: String = {"name":"sample json","version":1,"data":{"done":false,"rate":4.9}}
+   *   res0: String = {"name":"sample json","version":1,"data":{"done":false}}
    *
    *   scala> jsonFromFields.spaces2
    *   res1: String =
@@ -76,7 +83,6 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
    *     "version" : 1,
    *     "data" : {
    *       "done" : false,
-   *       "rate" : 4.9
    *     }
    *   }
    *
@@ -87,7 +93,6 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
    *       "version" : 1,
    *       "data" : {
    *           "done" : false,
-   *           "rate" : 4.9
    *       }
    *   }
    *
@@ -100,14 +105,12 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
 
   /** Let's see how we can use these methods to create custom `Json`s that represents specific JSON strings.
    */
-  def jsonObject(res0: Json, res1: (String, Json), res2: (String, Json), res3: Json) = {
+  def jsonObject(res0: Json, res1: (String, Json), res2: (String, Json)) = {
 
     "{\"key\":\"value\"}" should be(res0.noSpaces)
 
     "{\"name\":\"sample json\",\"data\":{\"done\":false}}" should be(
       Json.fromFields(List(res1, res2)).noSpaces)
-
-    "[{\"x\":1}]" should be(res3.noSpaces)
 
   }
 
@@ -140,7 +143,10 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
    * So, with these in mind, what should be the result if we apply our `transformJson` function to our `jsonArray` value?
    *
    */
-  def jsonClass(res0: String) =
-    transformJson(jsonArray).noSpaces should be(res0)
+  def jsonClass(res0: Json, res1: String) = {
+    "[{\"x\":1}]" should be(res0.noSpaces)
+
+    transformJson(jsonArray).noSpaces should be(res1)
+  }
 
 }
