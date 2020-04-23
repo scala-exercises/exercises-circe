@@ -12,8 +12,9 @@ object JsonHelpers {
 
   val jsonFromFields: Json = Json.fromFields(
     List(
-      ("key1", Json.fromString("value1")),
-      ("key2", Json.fromInt(1))
+      ("name", Json.fromString("sample json")),
+      ("version", Json.fromInt(1)),
+      ("data", Json.fromFields(List(("done", Json.fromBoolean(false)))))
     ))
 
   val jsonArray: Json = Json.fromValues(
