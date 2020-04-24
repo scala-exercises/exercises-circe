@@ -105,7 +105,8 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
     "{\"key\":\"value\"}" should be(res0.noSpaces)
 
     "{\"name\":\"sample json\",\"data\":{\"done\":false}}" should be(
-      Json.fromFields(List(res1, res2)).noSpaces)
+      Json.fromFields(List(res1, res2)).noSpaces
+    )
 
     "[{\"x\":1}]" should be(res3.noSpaces)
 

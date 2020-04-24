@@ -14,7 +14,8 @@ object JsonHelpers {
     List(
       ("key1", Json.fromString("value1")),
       ("key2", Json.fromInt(1))
-    ))
+    )
+  )
 
   val jsonArray: Json = Json.fromValues(
     List(
@@ -23,8 +24,10 @@ object JsonHelpers {
         List(
           ("field1", Json.fromInt(200)),
           ("field2", Json.fromString("Having circe in Scala Exercises is awesome"))
-        ))
-    ))
+        )
+      )
+    )
+  )
 
   def transformJson(jsonArray: Json): Json =
     jsonArray mapArray (_.init)
