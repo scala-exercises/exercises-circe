@@ -25,7 +25,8 @@ object CirceLibrary extends definitions.Library {
       EncodingDecodingSection,
       CustomCodecsSection,
       ADTSection,
-      OpticsSection)
+      OpticsSection
+    )
 
   override def logoPath = "circe"
 }
