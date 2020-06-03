@@ -143,7 +143,7 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
    *
    * {{{
    *   def transformJson(jsonArray: Json): Json =
-   *     jsonArray mapArray { oneJson: List[Json] =>
+   *     jsonArray mapArray { oneJson: Vector[Json] =>
    *       oneJson.init
    *     }
    * }}}
