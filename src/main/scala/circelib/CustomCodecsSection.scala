@@ -79,7 +79,7 @@ object CustomCodecsSection extends AnyFlatSpec with Matchers with Section {
    *   val map = Map[Foo, Int](
    *     Foo("hello") -> 123,
    *     Foo("world") -> 456
-   *   }
+   *   )
    *
    *   val json = map.asJson
    *
