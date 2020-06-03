@@ -32,6 +32,7 @@ These are the people that have contributed to the _exercises-circe_ project:
 - [![jdugan1024](https://avatars1.githubusercontent.com/u/589276?v=4&s=20) **jdugan1024**](https://github.com/jdugan1024)
 - [![angoglez](https://avatars0.githubusercontent.com/u/10107285?v=4&s=20) **angoglez**](https://github.com/angoglez)
 - [![andyscott](https://avatars3.githubusercontent.com/u/310363?v=4&s=20) **andyscott**](https://github.com/andyscott)
+- [![dmarticus](https://avatars2.githubusercontent.com/u/4853149?v=4&s=20) **dmarticus**](https://github.com/dmarticus)
 - [![FRosner](https://avatars2.githubusercontent.com/u/3427394?v=4&s=20) **FRosner**](https://github.com/FRosner)
 - [![GuntherW](https://avatars3.githubusercontent.com/u/3511382?v=4&s=20) **GuntherW**](https://github.com/GuntherW)
 - [![MaureenElsberry](https://avatars0.githubusercontent.com/u/17556002?v=4&s=20) **MaureenElsberry**](https://github.com/MaureenElsberry)
