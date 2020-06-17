@@ -21,7 +21,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 import io.circe.optics.JsonPath._
 
-/** @param name Optics
+/**
+ * @param name Optics
  */
 object OpticsSection extends AnyFlatSpec with Matchers with org.scalaexercises.definitions.Section {
 
@@ -118,7 +119,6 @@ object OpticsSection extends AnyFlatSpec with Matchers with org.scalaexercises.d
    *   flatMap(_.asArray).
    *   getOrElse(Vector.empty)
    *
-   *
    *   val descriptions: Vector[String] =
    *   items.flatMap(_.hcursor.get[String]("description").toOption)
    *   // descriptions: Vector[String] = Vector("banana", "apple")
@@ -169,7 +169,6 @@ object OpticsSection extends AnyFlatSpec with Matchers with org.scalaexercises.d
   }
 
   /**
-   *
    * =Dynamic=
    *
    * `JsonPath` relies on a feature of Scala called `Dynamic`. Using `Dynamic` you can call methods that don´t actually exist.

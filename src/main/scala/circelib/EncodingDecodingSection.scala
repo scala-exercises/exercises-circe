@@ -22,7 +22,8 @@ import io.circe.parser.decode
 import io.circe.syntax._
 import io.circe.generic.auto._
 
-/** @param name Encoding and decoding
+/**
+ * @param name Encoding and decoding
  */
 object EncodingDecodingSection
     extends AnyFlatSpec
@@ -131,7 +132,6 @@ object EncodingDecodingSection
    *
    *  It’s not as clean or as maintainable as generic derivation, but it’s less magical, it requires nothing but `circe-core`, and if you need a custom name
    *  mapping it’s currently the best solution (although `0.6.0` introduces experimental configurable generic derivation in the `circe-generic-extras` module).
-   *
    *
    * =Automatic derivation=
    *
