@@ -22,13 +22,15 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 import circelib.helpers.JsonHelpers
 
-/** @param name Json
+/**
+ * @param name Json
  */
 object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
 
   import JsonHelpers._
 
-  /** `Json` is the circe data type representing a JSON object. It's very useful to be familiar with this data type since
+  /**
+   * `Json` is the circe data type representing a JSON object. It's very useful to be familiar with this data type since
    * it's how circe models the base type we want to address.
    *
    * To begin, let's briefly talk about the shape of every `Json` object. It's basically semi-structured data built on
@@ -71,7 +73,6 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
    *
    * }}}
    *
-   *
    * In addition, there are a few other methods that allow you to convert a `Json` object to a `String`.
    *
    * {{{
@@ -108,7 +109,8 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
   def jsonToString(res0: String) =
     jsonFromFields.noSpaces should be(res0)
 
-  /** Let's see how we can use these methods to create custom `Json`s that represents specific JSON strings.
+  /**
+   * Let's see how we can use these methods to create custom `Json`s that represents specific JSON strings.
    */
   def jsonObject(res0: Json, res1: (String, Json), res2: (String, Json), res3: Json) = {
 
@@ -122,7 +124,8 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
 
   }
 
-  /** Furthemore, there are some other methods that allow you to deal with `Json` objects and apply transformation. We
+  /**
+   * Furthemore, there are some other methods that allow you to deal with `Json` objects and apply transformation. We
    * can use them to modify or apply any changes to a given `Json` object in a simpler way, as if we we're dealing with it
    * manually.
    *
@@ -149,7 +152,6 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
    * }}}
    *
    * So, with these in mind, what should be the result if we apply our `transformJson` function to our `jsonArray` value?
-   *
    */
   def jsonClass(res0: String) =
     transformJson(jsonArray).noSpaces should be(res0)

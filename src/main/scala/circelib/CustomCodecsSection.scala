@@ -71,7 +71,6 @@ object CustomCodecsSection extends AnyFlatSpec with Matchers with Section {
    *
    *   case class Foo(value: String)
    *
-   *
    *   implicit val fooKeyEncoder = new KeyEncoder[Foo] {
    *     override def apply(foo: Foo): String = foo.value
    *   }
@@ -107,7 +106,6 @@ object CustomCodecsSection extends AnyFlatSpec with Matchers with Section {
    * {{{
    *   import io.circe.generic.extras._, io.circe.syntax._
    * }}}
-   *
    */
   def basicCustomKeyMapping(res0: String) = {
     implicit val config: Configuration = Configuration.default.withSnakeCaseMemberNames

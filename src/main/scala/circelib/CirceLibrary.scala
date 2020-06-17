@@ -18,7 +18,8 @@ package circelib
 
 import org.scalaexercises.definitions
 
-/** circe (pronounced SUR-see, or KEER-kee in classical Greek) is a JSON library for Scala (and Scala.js).
+/**
+ * circe (pronounced SUR-see, or KEER-kee in classical Greek) is a JSON library for Scala (and Scala.js).
  *
  * @param name circe
  */

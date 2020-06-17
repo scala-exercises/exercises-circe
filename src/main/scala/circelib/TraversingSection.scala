@@ -21,7 +21,8 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 import io.circe._
 
-/** @param name Traversing and modifying
+/**
+ * @param name Traversing and modifying
  */
 object TraversingSection
     extends AnyFlatSpec
