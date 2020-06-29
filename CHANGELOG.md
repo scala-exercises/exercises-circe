@@ -1,5 +1,30 @@
 # Changelog
 
+## [v0.6.3](https://github.com/scala-exercises/exercises-circe/tree/v0.6.3) (2020-06-29)
+
+[Full Changelog](https://github.com/scala-exercises/exercises-circe/compare/v0.6.2...v0.6.3)
+
+📈 **Dependency updates**
+
+- Update definitions, exercise-compiler, ... to 0.6.3 [\#67](https://github.com/scala-exercises/exercises-circe/pull/67) ([scala-steward](https://github.com/scala-steward))
+- Update sbt to 1.3.13 [\#66](https://github.com/scala-exercises/exercises-circe/pull/66) ([scala-steward](https://github.com/scala-steward))
+- Update sbt-mdoc to 2.2.3 [\#65](https://github.com/scala-exercises/exercises-circe/pull/65) ([scala-steward](https://github.com/scala-steward))
+- Update scalafmt-core to 2.6.1 [\#64](https://github.com/scala-exercises/exercises-circe/pull/64) ([scala-steward](https://github.com/scala-steward))
+- Update scalacheck-1-14 to 3.2.0.0 [\#63](https://github.com/scala-exercises/exercises-circe/pull/63) ([scala-steward](https://github.com/scala-steward))
+- Update scalatest to 3.2.0 [\#62](https://github.com/scala-exercises/exercises-circe/pull/62) ([scala-steward](https://github.com/scala-steward))
+- Update sbt-mdoc to 2.2.2 [\#56](https://github.com/scala-exercises/exercises-circe/pull/56) ([scala-steward](https://github.com/scala-steward))
+- Update sbt to 1.3.11 [\#49](https://github.com/scala-exercises/exercises-circe/pull/49) ([scala-steward](https://github.com/scala-steward))
+- Update scalatest to 3.1.2 [\#47](https://github.com/scala-exercises/exercises-circe/pull/47) ([scala-steward](https://github.com/scala-steward))
+
+**Merged pull requests:**
+
+- Update scalafmt-core to 2.6.0 [\#60](https://github.com/scala-exercises/exercises-circe/pull/60) ([BenFradet](https://github.com/BenFradet))
+- Update scalafmt-core to 2.5.3 [\#58](https://github.com/scala-exercises/exercises-circe/pull/58) ([BenFradet](https://github.com/BenFradet))
+- Prepare repository for next  release and SBT build improvements [\#54](https://github.com/scala-exercises/exercises-circe/pull/54) ([juanpedromoreno](https://github.com/juanpedromoreno))
+- tiny typo in the map definition [\#53](https://github.com/scala-exercises/exercises-circe/pull/53) ([dmarticus](https://github.com/dmarticus))
+- change the typesignature for the mapArray method in transformJson [\#51](https://github.com/scala-exercises/exercises-circe/pull/51) ([dmarticus](https://github.com/dmarticus))
+- Compile when Publish [\#40](https://github.com/scala-exercises/exercises-circe/pull/40) ([juanpedromoreno](https://github.com/juanpedromoreno))
+
 ## [v0.6.2](https://github.com/scala-exercises/exercises-circe/tree/v0.6.2) (2020-04-27)
 
 [Full Changelog](https://github.com/scala-exercises/exercises-circe/compare/v0.6.1...v0.6.2)
@@ -7,10 +32,6 @@
 ## [v0.6.1](https://github.com/scala-exercises/exercises-circe/tree/v0.6.1) (2020-04-27)
 
 [Full Changelog](https://github.com/scala-exercises/exercises-circe/compare/v0.6.0...v0.6.1)
-
-**Merged pull requests:**
-
-- Compile when Publish [\#40](https://github.com/scala-exercises/exercises-circe/pull/40) ([juanpedromoreno](https://github.com/juanpedromoreno))
 
 ## [v0.6.0](https://github.com/scala-exercises/exercises-circe/tree/v0.6.0) (2020-04-24)
 
