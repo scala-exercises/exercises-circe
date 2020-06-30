@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.6.4](https://github.com/scala-exercises/exercises-circe/tree/v0.6.4) (2020-06-30)
+
+[Full Changelog](https://github.com/scala-exercises/exercises-circe/compare/v0.6.3...v0.6.4)
+
 ## [v0.6.3](https://github.com/scala-exercises/exercises-circe/tree/v0.6.3) (2020-06-29)
 
 [Full Changelog](https://github.com/scala-exercises/exercises-circe/compare/v0.6.2...v0.6.3)
@@ -23,7 +27,6 @@
 - Prepare repository for next  release and SBT build improvements [\#54](https://github.com/scala-exercises/exercises-circe/pull/54) ([juanpedromoreno](https://github.com/juanpedromoreno))
 - tiny typo in the map definition [\#53](https://github.com/scala-exercises/exercises-circe/pull/53) ([dmarticus](https://github.com/dmarticus))
 - change the typesignature for the mapArray method in transformJson [\#51](https://github.com/scala-exercises/exercises-circe/pull/51) ([dmarticus](https://github.com/dmarticus))
-- Compile when Publish [\#40](https://github.com/scala-exercises/exercises-circe/pull/40) ([juanpedromoreno](https://github.com/juanpedromoreno))
 
 ## [v0.6.2](https://github.com/scala-exercises/exercises-circe/tree/v0.6.2) (2020-04-27)
 
@@ -32,6 +35,10 @@
 ## [v0.6.1](https://github.com/scala-exercises/exercises-circe/tree/v0.6.1) (2020-04-27)
 
 [Full Changelog](https://github.com/scala-exercises/exercises-circe/compare/v0.6.0...v0.6.1)
+
+**Merged pull requests:**
+
+- Compile when Publish [\#40](https://github.com/scala-exercises/exercises-circe/pull/40) ([juanpedromoreno](https://github.com/juanpedromoreno))
 
 ## [v0.6.0](https://github.com/scala-exercises/exercises-circe/tree/v0.6.0) (2020-04-24)
 
