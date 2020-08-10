@@ -1,5 +1,20 @@
 # Changelog
 
+## [v0.6.6](https://github.com/scala-exercises/exercises-circe/tree/v0.6.6) (2020-08-10)
+
+[Full Changelog](https://github.com/scala-exercises/exercises-circe/compare/v0.6.4...v0.6.6)
+
+📈 **Dependency updates**
+
+- Update definitions, exercise-compiler, ... to 0.6.4 [\#77](https://github.com/scala-exercises/exercises-circe/pull/77) ([47erbot](https://github.com/47erbot))
+- Update sbt-mdoc to 2.2.4 [\#76](https://github.com/scala-exercises/exercises-circe/pull/76) ([47erbot](https://github.com/47erbot))
+- Update scalacheck-1-14 to 3.2.1.0 [\#75](https://github.com/scala-exercises/exercises-circe/pull/75) ([47erbot](https://github.com/47erbot))
+- Update scalatest to 3.2.1 [\#74](https://github.com/scala-exercises/exercises-circe/pull/74) ([47erbot](https://github.com/47erbot))
+- Update sbt-scalafmt to 2.4.2 [\#73](https://github.com/scala-exercises/exercises-circe/pull/73) ([47erbot](https://github.com/47erbot))
+- Update scalafmt-core to 2.6.4 [\#72](https://github.com/scala-exercises/exercises-circe/pull/72) ([47erbot](https://github.com/47erbot))
+- Update scalafmt-core to 2.6.3 [\#71](https://github.com/scala-exercises/exercises-circe/pull/71) ([scala-steward](https://github.com/scala-steward))
+- Update scalafmt-core to 2.6.2 [\#70](https://github.com/scala-exercises/exercises-circe/pull/70) ([scala-steward](https://github.com/scala-steward))
+
 ## [v0.6.4](https://github.com/scala-exercises/exercises-circe/tree/v0.6.4) (2020-06-30)
 
 [Full Changelog](https://github.com/scala-exercises/exercises-circe/compare/v0.6.3...v0.6.4)
@@ -36,16 +51,13 @@
 
 [Full Changelog](https://github.com/scala-exercises/exercises-circe/compare/v0.6.0...v0.6.1)
 
-**Merged pull requests:**
-
-- Compile when Publish [\#40](https://github.com/scala-exercises/exercises-circe/pull/40) ([juanpedromoreno](https://github.com/juanpedromoreno))
-
 ## [v0.6.0](https://github.com/scala-exercises/exercises-circe/tree/v0.6.0) (2020-04-24)
 
 [Full Changelog](https://github.com/scala-exercises/exercises-circe/compare/b762749e79dae3f04484b54bc4a7ced7851c093b...v0.6.0)
 
 **Merged pull requests:**
 
+- Compile when Publish [\#40](https://github.com/scala-exercises/exercises-circe/pull/40) ([juanpedromoreno](https://github.com/juanpedromoreno))
 - Updates Project [\#36](https://github.com/scala-exercises/exercises-circe/pull/36) ([juanpedromoreno](https://github.com/juanpedromoreno))
 - Update sbt to 1.3.10 [\#34](https://github.com/scala-exercises/exercises-circe/pull/34) ([scala-steward](https://github.com/scala-steward))
 - Update sbt to 1.3.9 [\#33](https://github.com/scala-exercises/exercises-circe/pull/33) ([scala-steward](https://github.com/scala-steward))

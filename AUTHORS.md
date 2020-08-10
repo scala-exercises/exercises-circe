@@ -9,6 +9,7 @@
 The maintainers of the project are:
 
 - [![47erbot](https://avatars1.githubusercontent.com/u/24799081?v=4&s=20) **47erbot**](https://github.com/47erbot)
+- [![alejandrohdezma](https://avatars0.githubusercontent.com/u/9027541?v=4&s=20) **Alejandro Hernández (alejandrohdezma)**](https://github.com/alejandrohdezma)
 - [![angoglez](https://avatars0.githubusercontent.com/u/10107285?v=4&s=20) **Ana Gómez González (angoglez)**](https://github.com/angoglez)
 - [![andyscott](https://avatars3.githubusercontent.com/u/310363?v=4&s=20) **Andy Scott (andyscott)**](https://github.com/andyscott)
 - [![AntonioMateoGomez](https://avatars0.githubusercontent.com/u/25897490?v=4&s=20) **Antonio Mateo (AntonioMateoGomez)**](https://github.com/AntonioMateoGomez)
@@ -40,4 +41,5 @@ These are the people that have contributed to the _exercises-circe_ project:
 - [![MaureenElsberry](https://avatars0.githubusercontent.com/u/17556002?v=4&s=20) **MaureenElsberry**](https://github.com/MaureenElsberry)
 - [![tanjinP](https://avatars3.githubusercontent.com/u/9021117?v=4&s=20) **tanjinP**](https://github.com/tanjinP)
 - [![vadimbakaev](https://avatars2.githubusercontent.com/u/20407059?v=4&s=20) **vadimbakaev**](https://github.com/vadimbakaev)
+- [![alejandrohdezma](https://avatars0.githubusercontent.com/u/9027541?v=4&s=20) **alejandrohdezma**](https://github.com/alejandrohdezma)
 - [![arj-196](https://avatars0.githubusercontent.com/u/10669206?v=4&s=20) **arj-196**](https://github.com/arj-196)
