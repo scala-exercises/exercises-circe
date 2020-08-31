@@ -16,8 +16,8 @@ lazy val exercises = (project in file("."))
   .settings(name := "exercises-circe")
   .settings(
     libraryDependencies ++= Seq(
-      "org.scala-exercises"        %% "exercise-compiler"         % "0.6.5",
-      "org.scala-exercises"        %% "definitions"               % "0.6.5",
+      "org.scala-exercises"        %% "exercise-compiler"         % "0.6.6",
+      "org.scala-exercises"        %% "definitions"               % "0.6.6",
       "org.typelevel"              %% "cats-core"                 % "2.1.1",
       "io.circe"                   %% "circe-core"                % "0.13.0",
       "io.circe"                   %% "circe-generic"             % "0.13.0",
