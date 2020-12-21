@@ -18,7 +18,7 @@ lazy val exercises = (project in file("."))
     libraryDependencies ++= Seq(
       "org.scala-exercises"        %% "exercise-compiler"         % "0.6.7",
       "org.scala-exercises"        %% "definitions"               % "0.6.7",
-      "org.typelevel"              %% "cats-core"                 % "2.3.0",
+      "org.typelevel"              %% "cats-core"                 % "2.3.1",
       "io.circe"                   %% "circe-core"                % "0.13.0",
       "io.circe"                   %% "circe-generic"             % "0.13.0",
       "io.circe"                   %% "circe-parser"              % "0.13.0",
