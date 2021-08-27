@@ -24,10 +24,11 @@ import org.scalatest.matchers.should.Matchers
 /**
  * =ADTs encoding and decoding=
  *
- * The most straightforward way to encode / decode ADTs is by using generic derivation for the case classes but
- * explicitly defined instances for the ADT type.
+ * The most straightforward way to encode / decode ADTs is by using generic derivation for the case
+ * classes but explicitly defined instances for the ADT type.
  *
- * @param name ADT (Algebraic Data Types)
+ * @param name
+ *   ADT (Algebraic Data Types)
  */
 object ADTSection extends AnyFlatSpec with Matchers with Section {
 
@@ -68,15 +69,16 @@ object ADTSection extends AnyFlatSpec with Matchers with Section {
    * }
    * }}}
    *
-   * Note that we have to call `widen` (which is provided by Cats’s `Functor` syntax, which we bring into scope with
-   * the first import) on the decoders because the `Decoder` type class is not covariant. The invariance of circe’s
-   * type classes is a matter of some controversy (`Argonaut` for example has gone from invariant to covariant and
-   * back), but it has enough benefits that it’s unlikely to change, which means we need workarounds like this
-   * occasionally.
+   * Note that we have to call `widen` (which is provided by Cats’s `Functor` syntax, which we bring
+   * into scope with the first import) on the decoders because the `Decoder` type class is not
+   * covariant. The invariance of circe’s type classes is a matter of some controversy (`Argonaut`
+   * for example has gone from invariant to covariant and back), but it has enough benefits that
+   * it’s unlikely to change, which means we need workarounds like this occasionally.
    *
-   * It’s also worth noting that our explicit `Encoder` and `Decoder` instances will take precedence over the
-   * generically-derived instances we would otherwise get from the `io.circe.generic.auto._` import (see slides from
-   * Travis Brown’s talk here for some discussion of how this prioritization works).
+   * It’s also worth noting that our explicit `Encoder` and `Decoder` instances will take precedence
+   * over the generically-derived instances we would otherwise get from the
+   * `io.circe.generic.auto._` import (see slides from Travis Brown’s talk here for some discussion
+   * of how this prioritization works).
    *
    * We can use these instances like this:
    */
@@ -123,18 +125,19 @@ object ADTSection extends AnyFlatSpec with Matchers with Section {
   }
 
   /**
-   * This will work for any ADT anywhere that `encodeAdtNoDiscr` and `decodeAdtNoDiscr` are in scope. If we wanted it
-   * to be more limited, we could replace the generic `A` with our ADT types in those definitions, or we could make
-   * the definitions non-implicit and define implicit instances explicitly for the ADTs we want encoded this way.
+   * This will work for any ADT anywhere that `encodeAdtNoDiscr` and `decodeAdtNoDiscr` are in
+   * scope. If we wanted it to be more limited, we could replace the generic `A` with our ADT types
+   * in those definitions, or we could make the definitions non-implicit and define implicit
+   * instances explicitly for the ADTs we want encoded this way.
    *
-   * The main drawback of this approach (apart from the extra `circe-shapes` dependency) is that the constructors
-   * will be tried in alphabetical order, which may not be what we want if we have ambiguous case classes (where
-   * the member names and types are the same).
+   * The main drawback of this approach (apart from the extra `circe-shapes` dependency) is that the
+   * constructors will be tried in alphabetical order, which may not be what we want if we have
+   * ambiguous case classes (where the member names and types are the same).
    *
-   *  =The future=
+   * =The future=
    *
-   * The `generic-extras` module provides a little more configurability in this respect. We can write the following,
-   * for example:
+   * The `generic-extras` module provides a little more configurability in this respect. We can
+   * write the following, for example:
    * {{{
    * object GenericExtraDerivation {
    *   import io.circe.generic.extras.Configuration
@@ -144,10 +147,10 @@ object ADTSection extends AnyFlatSpec with Matchers with Section {
    * }
    * }}}
    *
-   * Instead of a wrapper object in the JSON we have an extra field that indicates the constructor. This isn’t the
-   * default behavior since it has some weird corner cases (e.g. if one of our case classes had a member named
-   * `what_am_i`), but in many cases it’s reasonable and it’s been supported in `generic-extras` since that module was
-   * introduced.
+   * Instead of a wrapper object in the JSON we have an extra field that indicates the constructor.
+   * This isn’t the default behavior since it has some weird corner cases (e.g. if one of our case
+   * classes had a member named `what_am_i`), but in many cases it’s reasonable and it’s been
+   * supported in `generic-extras` since that module was introduced.
    */
   def genericExtrasADT(res0: Either[String, Event]) = {
     import GenericExtraDerivation._

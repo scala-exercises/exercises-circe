@@ -25,7 +25,8 @@ import org.scalatest.matchers.should.Matchers
 /**
  * =Custom encoders/decoders=
  *
- * If you want to write your own codec instead of using automatic or semi-automatic derivation, you can do so in a couple of ways.
+ * If you want to write your own codec instead of using automatic or semi-automatic derivation, you
+ * can do so in a couple of ways.
  *
  * Firstly, you can write a new `Encoder[A]` and `Decoder[A]` from scratch
  *
@@ -33,16 +34,16 @@ import org.scalatest.matchers.should.Matchers
  * class Thing()
  *
  * implicit val encodeFoo: Encoder[Thing] = new Encoder[Thing] {
- *    final def apply(a: Thing): Json = ??? // your implementation goes here
+ *     final def apply(a: Thing): Json = ??? // your implementation goes here
  * }
  *
  * implicit val decodeFoo: Decoder[Thing] = new Decoder[Thing] {
- *    final def apply(c: HCursor): Decoder.Result[Thing] = Left(DecodingFailure("Not implemented yet", c.history))
+ *     final def apply(c: HCursor): Decoder.Result[Thing] = Left(DecodingFailure("Not implemented yet", c.history))
  * }
  * }}}
  *
- * But in many cases you might find it more convenient to piggyback on top of the decoders that are already available. For example, a codec for
- * `java.time.Instant` might look like this:
+ * But in many cases you might find it more convenient to piggyback on top of the decoders that are
+ * already available. For example, a codec for `java.time.Instant` might look like this:
  * {{{
  * import cats.syntax.either._
  *
@@ -51,19 +52,20 @@ import org.scalatest.matchers.should.Matchers
  * implicit val encodeInstant: Encoder[Instant] = Encoder.encodeString.contramap[Instant](_.toString)
  *
  * implicit val decodeInstant: Decoder[Instant] = Decoder.decodeString.emap { str =>
- *    Either.catchNonFatal(Instant.parse(str)).leftMap(t => "Instant")
+ *     Either.catchNonFatal(Instant.parse(str)).leftMap(t => "Instant")
  * }
  * }}}
  *
- * @param name Custom codecs
+ * @param name
+ *   Custom codecs
  */
 object CustomCodecsSection extends AnyFlatSpec with Matchers with Section {
 
   /**
    * =Custom key types=
    *
-   * If you need to encode/decode `Map[K, V]` where `K` is not `String` (or `Symbol`, `Int`, `Long`, etc), you need to provide a `KeyEncoder`
-   * and/or `KeyDecoder` for your custom key type.
+   * If you need to encode/decode `Map[K, V]` where `K` is not `String` (or `Symbol`, `Int`, `Long`,
+   * etc), you need to provide a `KeyEncoder` and/or `KeyDecoder` for your custom key type.
    *
    * For example:
    * {{{
@@ -97,12 +99,13 @@ object CustomCodecsSection extends AnyFlatSpec with Matchers with Section {
   /**
    * =Custom key mappings via annotations=
    *
-   * It’s often necessary to work with keys in your JSON objects that aren’t idiomatic case class member names in
-   * Scala. While the standard generic derivation doesn’t support this use case, the experimental circe-generic-extras
-   * module does provide two ways to transform your case class member names during encoding and decoding.
+   * It’s often necessary to work with keys in your JSON objects that aren’t idiomatic case class
+   * member names in Scala. While the standard generic derivation doesn’t support this use case, the
+   * experimental circe-generic-extras module does provide two ways to transform your case class
+   * member names during encoding and decoding.
    *
-   * In many cases the transformation is as simple as going from camel case to snake case, in which case all you need
-   * is a custom implicit configuration:
+   * In many cases the transformation is as simple as going from camel case to snake case, in which
+   * case all you need is a custom implicit configuration:
    * {{{
    *   import io.circe.generic.extras._, io.circe.syntax._
    * }}}

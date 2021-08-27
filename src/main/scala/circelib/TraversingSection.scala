@@ -22,7 +22,8 @@ import org.scalatest.matchers.should.Matchers
 import io.circe._
 
 /**
- * @param name Traversing and modifying
+ * @param name
+ *   Traversing and modifying
  */
 object TraversingSection
     extends AnyFlatSpec
@@ -32,7 +33,8 @@ object TraversingSection
   import circelib.helpers.TraversingHelpers._
 
   /**
-   * Working with JSON in circe usually involves using a cursor. Cursors are used both for extracting data and for performing modification.
+   * Working with JSON in circe usually involves using a cursor. Cursors are used both for
+   * extracting data and for performing modification.
    *
    * Suppose we have the following JSON document:
    *
@@ -62,7 +64,8 @@ object TraversingSection
    *     val cursor: HCursor = doc.hcursor
    * }}}
    *
-   * We can then use various operations to move the focus of the cursor around the document and extract data from it
+   * We can then use various operations to move the focus of the cursor around the document and
+   * extract data from it
    */
   def moveFocus(res0: Either[String, Double]) = {
     val baz: Decoder.Result[Double] = cursor.downField("values").downField("baz").as[Double]
@@ -102,9 +105,11 @@ object TraversingSection
    *
    * `Cursor` provides functionality for moving around a tree and making modifications.
    *
-   * `HCursor` tracks the history of operations performed. This can be used to provide useful error messages when something goes wrong.
+   * `HCursor` tracks the history of operations performed. This can be used to provide useful error
+   * messages when something goes wrong.
    *
-   * `ACursor` also tracks history, but represents the possibility of failure (e.g. calling `downField` on a field that doesn’t exist.
+   * `ACursor` also tracks history, but represents the possibility of failure (e.g. calling
+   * `downField` on a field that doesn’t exist.
    *
    * Pay attention because we are going to use a `.mapString` this time.
    *
