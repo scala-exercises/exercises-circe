@@ -23,25 +23,28 @@ import org.scalatest.matchers.should.Matchers
 import circelib.helpers.JsonHelpers
 
 /**
- * @param name Json
+ * @param name
+ *   Json
  */
 object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
 
   import JsonHelpers._
 
   /**
-   * `Json` is the circe data type representing a JSON object. It's very useful to be familiar with this data type since
-   * it's how circe models the base type we want to address.
+   * `Json` is the circe data type representing a JSON object. It's very useful to be familiar with
+   * this data type since it's how circe models the base type we want to address.
    *
-   * To begin, let's briefly talk about the shape of every `Json` object. It's basically semi-structured data built on
-   * top of key-value pairs. These key-value pairs have a specific shape:
+   * To begin, let's briefly talk about the shape of every `Json` object. It's basically
+   * semi-structured data built on top of key-value pairs. These key-value pairs have a specific
+   * shape:
    *   - keys are strings.
    *   - values can be multiple types.
    *
-   * Next, to model a real JSON object, we need to support different data types in the value field. For this purpose,
-   * we have different available methods so we can create a `Json` object from different source data types. Some examples
-   * of these methods are `fromString`, `fromBoolean`, `fromDouble` and so on. For further details about all possible
-   * methods, see the [[http://circe.github.io/circe/api/io/circe/Json$.html Scala docs]].
+   * Next, to model a real JSON object, we need to support different data types in the value field.
+   * For this purpose, we have different available methods so we can create a `Json` object from
+   * different source data types. Some examples of these methods are `fromString`, `fromBoolean`,
+   * `fromDouble` and so on. For further details about all possible methods, see the
+   * [[http://circe.github.io/circe/api/io/circe/Json$.html Scala docs]].
    *
    * Let's take a look at how these methods work.
    *
@@ -73,7 +76,8 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
    *
    * }}}
    *
-   * In addition, there are a few other methods that allow you to convert a `Json` object to a `String`.
+   * In addition, there are a few other methods that allow you to convert a `Json` object to a
+   * `String`.
    *
    * {{{
    *
@@ -110,7 +114,8 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
     jsonFromFields.noSpaces should be(res0)
 
   /**
-   * Let's see how we can use these methods to create custom `Json`s that represents specific JSON strings.
+   * Let's see how we can use these methods to create custom `Json`s that represents specific JSON
+   * strings.
    */
   def jsonObject(res0: Json, res1: (String, Json), res2: (String, Json), res3: Json) = {
 
@@ -125,9 +130,9 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
   }
 
   /**
-   * Furthemore, there are some other methods that allow you to deal with `Json` objects and apply transformation. We
-   * can use them to modify or apply any changes to a given `Json` object in a simpler way, as if we we're dealing with it
-   * manually.
+   * Furthemore, there are some other methods that allow you to deal with `Json` objects and apply
+   * transformation. We can use them to modify or apply any changes to a given `Json` object in a
+   * simpler way, as if we we're dealing with it manually.
    *
    * We are going to start with this `Json` array:
    *
@@ -151,7 +156,8 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
    *     }
    * }}}
    *
-   * So, with these in mind, what should be the result if we apply our `transformJson` function to our `jsonArray` value?
+   * So, with these in mind, what should be the result if we apply our `transformJson` function to
+   * our `jsonArray` value?
    */
   def jsonClass(res0: String) =
     transformJson(jsonArray).noSpaces should be(res0)
