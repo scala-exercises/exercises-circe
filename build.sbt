@@ -30,7 +30,7 @@ lazy val exercises = (project in file("."))
       "io.circe"                   %% "circe-generic-extras"      % "0.14.1",
       "io.circe"                   %% "circe-shapes"              % "0.14.1",
       "io.circe"                   %% "circe-optics"              % "0.14.1",
-      "com.chuusai"                %% "shapeless"                 % "2.3.7",
+      "com.chuusai"                %% "shapeless"                 % "2.3.8",
       "org.scalatest"              %% "scalatest"                 % "3.2.11",
       "org.scalacheck"             %% "scalacheck"                % "1.15.4",
       "org.scalatestplus"          %% "scalacheck-1-14"           % "3.2.2.0",
