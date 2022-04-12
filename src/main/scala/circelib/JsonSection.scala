@@ -82,28 +82,20 @@ object JsonSection extends AnyFlatSpec with Matchers with definitions.Section {
    * {{{
    *
    *   scala> jsonFromFields.noSpaces
-   *   res0: String = {"name":"sample json","version":1,"data":{"done":false,"rate":4.9}}
+   *   res0: String = {"key1":"value1","key2":1}
    *
    *   scala> jsonFromFields.spaces2
    *   res1: String =
    *   {
-   *     "name" : "sample json",
-   *     "version" : 1,
-   *     "data" : {
-   *       "done" : false,
-   *       "rate" : 4.9
-   *     }
+   *     "key1" : "value1",
+   *     "key2" : 1,
    *   }
    *
    *   scala> jsonFromFields.spaces4
    *   res2: String =
    *   {
-   *       "name" : "sample json",
-   *       "version" : 1,
-   *       "data" : {
-   *           "done" : false,
-   *           "rate" : 4.9
-   *       }
+   *       "key1" : "value1",
+   *       "key2" : 1,
    *   }
    *
    * }}}
