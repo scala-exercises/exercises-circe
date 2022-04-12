@@ -16,30 +16,37 @@
 
 package circelib
 
-import org.scalaexercises.Test
 import org.scalacheck.ScalacheckShapeless._
+import org.scalaexercises.Test
 import org.scalatest.refspec.RefSpec
 import org.scalatestplus.scalacheck.Checkers
 import shapeless.HNil
 
-class EncodingDecodingSpec extends RefSpec with Checkers {
+class CustomCodecsSpec extends RefSpec with Checkers {
 
-  def `decode Json` = {
+  import CustomCodecsSection._
+
+  def `map Json` = {
     check(
       Test.testSuccess(
-        EncodingDecodingSection.decodeJson _,
-        true :: (Right[String, List[Int]](List(1, 2, 3)): Either[String, List[Int]]) :: HNil
+        mapJson _,
+        (Right[String, Int](123): Either[String, Int]) :: HNil
       )
     )
   }
 
-  def `automatic derivation Json` = {
+  def `basic custom key mapping` =
     check(
       Test.testSuccess(
-        EncodingDecodingSection.automaticDerivation _,
-        (Right[String, String]("Chris"): Either[String, String]) :: HNil
+        basicCustomKeyMapping _,
+        """{"first_name":"Foo","last_name":"McBar"}""" :: HNil
       )
     )
-  }
+
+  def `complex custom key mapping` =
+    check(Test.testSuccess(complexCustomKeyMapping _, """{"my-int":13,"s":"Qux"}""" :: HNil))
+
+  def `mapping member annotation` =
+    check(Test.testSuccess(mappingMemberAnnotation _, """{"my-int":13,"s":"Qux"}""" :: HNil))
 
 }

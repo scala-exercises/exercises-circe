@@ -16,30 +16,38 @@
 
 package circelib
 
-import org.scalaexercises.Test
+import circelib.helpers.ADTHelpers.{Event, Foo}
 import org.scalacheck.ScalacheckShapeless._
+import org.scalaexercises.Test
 import org.scalatest.refspec.RefSpec
 import org.scalatestplus.scalacheck.Checkers
 import shapeless.HNil
 
-class EncodingDecodingSpec extends RefSpec with Checkers {
+class ADTSpec extends RefSpec with Checkers {
 
-  def `decode Json` = {
+  def `generic derivation`() =
     check(
       Test.testSuccess(
-        EncodingDecodingSection.decodeJson _,
-        true :: (Right[String, List[Int]](List(1, 2, 3)): Either[String, List[Int]]) :: HNil
+        ADTSection.genericDerivation _,
+        (Right(Foo(1000)): Either[String, Event]) :: """{"i":100}""" :: HNil
       )
     )
-  }
 
-  def `automatic derivation Json` = {
+  def `shapes derivation`() =
     check(
       Test.testSuccess(
-        EncodingDecodingSection.automaticDerivation _,
-        (Right[String, String]("Chris"): Either[String, String]) :: HNil
+        ADTSection.shapesDerivation _,
+        (Right(Foo(1000)): Either[String, Event]) :: """{"i":100}""" :: HNil
       )
     )
-  }
+
+  def `generic extras ADT`() =
+    check(
+      Test
+        .testSuccess(
+          ADTSection.genericExtrasADT _,
+          (Right(Foo(1000)): Either[String, Event]) :: HNil
+        )
+    )
 
 }

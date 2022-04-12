@@ -16,29 +16,23 @@
 
 package circelib.helpers
 
-import io.circe.Json
+import io.circe.KeyEncoder
+import io.circe.syntax._
 
-object JsonHelpers {
+object CustomCodecsHelpers {
 
-  val jsonFromFields: Json = Json.fromFields(
-    List(
-      ("key1", Json.fromString("value1")),
-      ("key2", Json.fromInt(1))
-    )
+  case class Foo(value: String)
+  // defined class Foo
+
+  implicit val fooKeyEncoder = new KeyEncoder[Foo] {
+    override def apply(foo: Foo): String = foo.value
+  }
+
+  val map = Map[Foo, Int](
+    Foo("hello") -> 123,
+    Foo("world") -> 456
   )
 
-  val jsonArray: Json = Json.fromValues(
-    List(
-      Json.fromFields(List(("field1", Json.fromInt(1)))),
-      Json.fromFields(
-        List(
-          ("field1", Json.fromInt(200)),
-          ("field2", Json.fromString("Having circe in Scala Exercises is awesome"))
-        )
-      )
-    )
-  )
+  val json = map.asJson
 
-  def transformJson(jsonArray: Json): Json =
-    jsonArray mapArray (_.init)
 }
