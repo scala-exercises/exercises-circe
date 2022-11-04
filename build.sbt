@@ -27,7 +27,7 @@ lazy val exercises = (project in file("."))
       "io.circe"                   %% "circe-core"                % "0.14.3",
       "io.circe"                   %% "circe-generic"             % "0.14.3",
       "io.circe"                   %% "circe-parser"              % "0.14.3",
-      "io.circe"                   %% "circe-generic-extras"      % "0.14.2",
+      "io.circe"                   %% "circe-generic-extras"      % "0.14.3",
       "io.circe"                   %% "circe-shapes"              % "0.14.3",
       "io.circe"                   %% "circe-optics"              % "0.14.1",
       "com.chuusai"                %% "shapeless"                 % "2.3.10",
